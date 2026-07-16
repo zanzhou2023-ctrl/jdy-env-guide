@@ -11,283 +11,267 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            height: 100%;
+            overflow: hidden;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-            background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 50%, #bbf7d0 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
+            background: linear-gradient(160deg, #f0fdf4 0%, #dcfce7 100%);
             color: #14532d;
-            line-height: 1.7;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.85);
-            border-radius: 20px;
-            box-shadow: 0 4px 20px rgba(22, 163, 74, 0.12);
-            backdrop-filter: blur(10px);
-        }
-
-        .header h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #15803d;
-            margin-bottom: 10px;
-        }
-
-        .header p {
-            color: #166534;
-            font-size: 1.05rem;
-        }
-
-        .card {
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 18px;
-            padding: 28px;
-            margin-bottom: 24px;
-            box-shadow: 0 4px 24px rgba(22, 163, 74, 0.1);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(34, 197, 94, 0.15);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(22, 163, 74, 0.16);
-        }
-
-        .card-title {
-            font-size: 1.35rem;
-            font-weight: 600;
-            color: #166534;
-            margin-bottom: 18px;
-            padding-bottom: 12px;
-            border-bottom: 2px solid #86efac;
+        .wrapper {
+            height: 100vh;
             display: flex;
-            align-items: center;
-            gap: 10px;
+            flex-direction: column;
+            padding: 2vh 2.5vw;
         }
 
-        .card-title .icon {
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, #22c55e, #16a34a);
-            border-radius: 10px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1rem;
+        header {
+            text-align: center;
+            padding: 1.2vh 0 1.8vh;
             flex-shrink: 0;
         }
 
-        .env-section {
-            margin-bottom: 20px;
+        header h1 {
+            font-size: clamp(1.4rem, 3vh, 2rem);
+            font-weight: 600;
+            color: #15803d;
+            letter-spacing: 1px;
         }
 
-        .env-section:last-child {
+        header p {
+            font-size: clamp(0.75rem, 1.4vh, 0.95rem);
+            color: #166534;
+            margin-top: 0.4vh;
+            opacity: 0.8;
+        }
+
+        .main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5vw;
+            min-height: 0;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 16px;
+            padding: 2vh 1.8vw;
+            box-shadow: 0 2px 16px rgba(22, 163, 74, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.12);
+            display: flex;
+            flex-direction: column;
+            min-height: 0;
+        }
+
+        .panel-title {
+            font-size: clamp(1rem, 2vh, 1.25rem);
+            font-weight: 600;
+            color: #166534;
+            margin-bottom: 1.5vh;
+            padding-bottom: 0.8vh;
+            border-bottom: 1px solid #bbf7d0;
+            flex-shrink: 0;
+        }
+
+        .panel-title span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 26px;
+            height: 26px;
+            background: #22c55e;
+            color: white;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .list {
+            flex: 1;
+            overflow-y: auto;
+            min-height: 0;
+        }
+
+        .item {
+            margin-bottom: 1.2vh;
+            padding: 1vh 1vw;
+            background: #f0fdf4;
+            border-radius: 10px;
+            border-left: 3px solid #4ade80;
+        }
+
+        .item:last-child {
             margin-bottom: 0;
         }
 
-        .env-name {
-            font-size: 1.1rem;
+        .item-name {
+            font-size: clamp(0.85rem, 1.6vh, 1rem);
             font-weight: 600;
             color: #15803d;
-            margin-bottom: 6px;
+            margin-bottom: 0.2vh;
         }
 
-        .env-desc {
+        .item-desc {
+            font-size: clamp(0.75rem, 1.4vh, 0.9rem);
             color: #374151;
-            font-size: 0.98rem;
-            padding-left: 16px;
-            border-left: 3px solid #86efac;
-        }
-
-        .dns-box {
-            background: linear-gradient(135deg, #dcfce7, #bbf7d0);
-            border-radius: 16px;
-            padding: 24px;
-            margin-top: 20px;
-            border: 2px dashed #22c55e;
-        }
-
-        .dns-box .label {
-            font-weight: 600;
-            color: #14532d;
-            margin-bottom: 10px;
-            font-size: 1.05rem;
-        }
-
-        .dns-value {
-            font-family: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, monospace;
-            font-size: 1.3rem;
-            color: #166534;
-            background: rgba(255, 255, 255, 0.8);
-            padding: 12px 18px;
-            border-radius: 10px;
-            display: inline-block;
-            user-select: all;
-            cursor: text;
-            border: 1px solid rgba(34, 197, 94, 0.3);
-        }
-
-        .note-box {
-            background: #ecfdf5;
-            border-left: 4px solid #22c55e;
-            padding: 16px 20px;
-            border-radius: 0 12px 12px 0;
-            margin-top: 18px;
-        }
-
-        .note-box p {
-            color: #374151;
-        }
-
-        .external-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 16px;
-        }
-
-        .mini-card {
-            background: #f0fdf4;
-            border-radius: 12px;
-            padding: 18px;
-            border: 1px solid rgba(34, 197, 94, 0.2);
-        }
-
-        .mini-card .env-name {
-            font-size: 1rem;
-        }
-
-        .mini-card .env-desc {
-            font-size: 0.92rem;
-            padding-left: 12px;
+            line-height: 1.4;
         }
 
         .tag {
             display: inline-block;
-            background: #22c55e;
-            color: white;
-            font-size: 0.75rem;
-            padding: 2px 10px;
-            border-radius: 20px;
-            margin-left: 8px;
+            font-size: clamp(0.65rem, 1.1vh, 0.75rem);
+            padding: 1px 7px;
+            border-radius: 10px;
+            margin-left: 6px;
             font-weight: 500;
             vertical-align: middle;
         }
 
-        .tag-blue {
-            background: #0ea5e9;
+        .tag-green { background: #22c55e; color: white; }
+        .tag-blue { background: #0ea5e9; color: white; }
+        .tag-orange { background: #f59e0b; color: white; }
+        .tag-purple { background: #8b5cf6; color: white; }
+
+        .dns-bar {
+            flex-shrink: 0;
+            margin-top: 1.5vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5vw;
         }
 
-        .tag-orange {
-            background: #f59e0b;
+        .dns-card {
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 14px;
+            padding: 1.5vh 1.5vw;
+            box-shadow: 0 2px 14px rgba(22, 163, 74, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.14);
         }
 
-        .tag-purple {
-            background: #8b5cf6;
+        .dns-label {
+            font-size: clamp(0.75rem, 1.4vh, 0.9rem);
+            color: #166534;
+            margin-bottom: 0.6vh;
+            font-weight: 500;
+        }
+
+        .dns-value {
+            font-family: "SF Mono", Monaco, "Cascadia Code", Consolas, monospace;
+            font-size: clamp(1.1rem, 2.2vh, 1.5rem);
+            color: #15803d;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .dns-tip {
+            font-size: clamp(0.75rem, 1.4vh, 0.9rem);
+            color: #374151;
+            line-height: 1.5;
         }
 
         footer {
             text-align: center;
-            margin-top: 30px;
+            padding-top: 1vh;
+            flex-shrink: 0;
+            font-size: clamp(0.65rem, 1.2vh, 0.8rem);
             color: #166534;
-            font-size: 0.9rem;
-            opacity: 0.8;
+            opacity: 0.7;
         }
 
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 16px;
+        @media (max-width: 900px) {
+            html, body {
+                height: auto;
+                overflow: auto;
             }
-            .header h1 {
-                font-size: 1.7rem;
+            .wrapper {
+                height: auto;
+                min-height: 100vh;
             }
-            .card {
-                padding: 20px;
+            .main {
+                grid-template-columns: 1fr;
             }
-            .dns-value {
-                font-size: 1.1rem;
-                width: 100%;
-                text-align: center;
+            .dns-bar {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
+    <div class="wrapper">
+        <header>
             <h1>JDY 环境说明</h1>
-            <p>精斗云内外网环境划分与 DNS 切换指南</p>
+            <p>内外网环境划分与 DNS 切换指南</p>
+        </header>
+
+        <div class="main">
+            <div class="panel">
+                <div class="panel-title"><span>内</span>内网环境</div>
+                <div class="list">
+                    <div class="item">
+                        <div class="item-name">dev</div>
+                        <div class="item-desc">开发自测环境</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">feature_jdy</div>
+                        <div class="item-desc">测试验证的测试环境，对应星辰之前的 dev5</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">release_jdy</div>
+                        <div class="item-desc">敏态灰度对应的模拟环境</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">master</div>
+                        <div class="item-desc">稳态灰度对应的模拟环境</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title"><span>外</span>外网环境</div>
+                <div class="list">
+                    <div class="item">
+                        <div class="item-name">betapre<span class="tag tag-green">杭州</span></div>
+                        <div class="item-desc">敏态灰度预发布环境，无真实客户</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">pre<span class="tag tag-blue">杭州</span></div>
+                        <div class="item-desc">稳态灰度预发布环境，无真实客户</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">F0<span class="tag tag-orange">北京 · 杭州 · 广东</span></div>
+                        <div class="item-desc">对应星辰的敏态环境</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">G0<span class="tag tag-purple">北京 · 杭州 · 广东</span></div>
+                        <div class="item-desc">对应星辰的稳态环境</div>
+                    </div>
+                    <div class="item">
+                        <div class="item-name">正式环境</div>
+                        <div class="item-desc">杭州 G1-G5、北京 G1、广东 G1</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="card">
-            <div class="card-title"><span class="icon">内</span>内网环境</div>
-            <p style="color:#374151; margin-bottom:18px;">内网环境访问前需要切换 DNS，切换后即可通过 www.jdy.com 访问内网。</p>
-            
-            <div class="env-section">
-                <div class="env-name">dev</div>
-                <div class="env-desc">开发自测环境</div>
-            </div>
-            <div class="env-section">
-                <div class="env-name">feature_jdy</div>
-                <div class="env-desc">测试验证的测试环境，对应星辰的应该是之前 dev5</div>
-            </div>
-            <div class="env-section">
-                <div class="env-name">release_jdy</div>
-                <div class="env-desc">敏态灰度对应的模拟环境</div>
-            </div>
-            <div class="env-section">
-                <div class="env-name">master</div>
-                <div class="env-desc">稳态灰度对应的模拟环境</div>
-            </div>
-
-            <div class="dns-box">
-                <div class="label">内网 DNS 地址</div>
+        <div class="dns-bar">
+            <div class="dns-card">
+                <div class="dns-label">内网 DNS 地址</div>
                 <div class="dns-value">172.20.199.230</div>
             </div>
-
-            <div class="note-box">
-                <p>内网的环境，需要切 DNS：<strong>172.20.199.230</strong>。切 DNS 之后，再访问 www.jdy.com，就是访问内网；不用 DNS，访问的就是外网。</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-title"><span class="icon">外</span>外网环境</div>
-            <div class="external-grid">
-                <div class="mini-card">
-                    <div class="env-name">betapre <span class="tag">杭州</span></div>
-                    <div class="env-desc">敏态灰度对应的预发布环境，没真实客户</div>
-                </div>
-                <div class="mini-card">
-                    <div class="env-name">pre <span class="tag tag-blue">杭州</span></div>
-                    <div class="env-desc">稳态灰度对应的预发布环境，没真实客户</div>
-                </div>
-                <div class="mini-card">
-                    <div class="env-name">F0 <span class="tag tag-orange">北京 · 杭州 · 广东</span></div>
-                    <div class="env-desc">对应星辰的敏态</div>
-                </div>
-                <div class="mini-card">
-                    <div class="env-name">G0 <span class="tag tag-purple">北京 · 杭州 · 广东</span></div>
-                    <div class="env-desc">对应星辰的稳态</div>
-                </div>
-                <div class="mini-card" style="grid-column: 1 / -1;">
-                    <div class="env-name">正式环境</div>
-                    <div class="env-desc">杭州 G1-G5、北京 G1、广东 G1</div>
-                </div>
+            <div class="dns-card">
+                <div class="dns-label">切换说明</div>
+                <div class="dns-tip">切 DNS 后访问 www.jdy.com 即进入内网；不切换 DNS 则访问外网。</div>
             </div>
         </div>
 
         <footer>
-            <p>文本内容均可选中复制</p>
+            所有文本内容均可选中复制
         </footer>
     </div>
 </body>
