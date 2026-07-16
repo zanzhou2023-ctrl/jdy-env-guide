@@ -20,90 +20,88 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
             background: linear-gradient(160deg, #f0fdf4 0%, #dcfce7 100%);
             color: #14532d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .wrapper {
-            height: 100vh;
+        .container {
+            width: auto;
+            max-width: 92vw;
             display: flex;
             flex-direction: column;
-            padding: 2vh 2.5vw;
+            align-items: center;
+            gap: 1.6vh;
         }
 
         header {
             text-align: center;
-            padding: 1.2vh 0 1.8vh;
-            flex-shrink: 0;
+            padding: 0.6vh 0;
         }
 
         header h1 {
-            font-size: clamp(1.4rem, 3vh, 2rem);
+            font-size: clamp(1.3rem, 2.8vh, 1.8rem);
             font-weight: 600;
             color: #15803d;
             letter-spacing: 1px;
         }
 
         header p {
-            font-size: clamp(0.75rem, 1.4vh, 0.95rem);
+            font-size: clamp(0.7rem, 1.3vh, 0.85rem);
             color: #166534;
-            margin-top: 0.4vh;
+            margin-top: 0.3vh;
             opacity: 0.8;
         }
 
         .main {
-            flex: 1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5vw;
-            min-height: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2vw;
         }
 
         .panel {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 16px;
-            padding: 2vh 1.8vw;
-            box-shadow: 0 2px 16px rgba(22, 163, 74, 0.08);
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 14px;
+            padding: 1.8vh 1.4vw;
+            box-shadow: 0 2px 14px rgba(22, 163, 74, 0.08);
             border: 1px solid rgba(34, 197, 94, 0.12);
-            display: flex;
-            flex-direction: column;
-            min-height: 0;
+            min-width: 280px;
+            width: auto;
+            flex: 0 1 auto;
         }
 
         .panel-title {
-            font-size: clamp(1rem, 2vh, 1.25rem);
+            font-size: clamp(0.95rem, 1.9vh, 1.15rem);
             font-weight: 600;
             color: #166534;
-            margin-bottom: 1.5vh;
-            padding-bottom: 0.8vh;
+            margin-bottom: 1.2vh;
+            padding-bottom: 0.7vh;
             border-bottom: 1px solid #bbf7d0;
-            flex-shrink: 0;
+            white-space: nowrap;
         }
 
         .panel-title span {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 26px;
-            height: 26px;
+            width: 24px;
+            height: 24px;
             background: #22c55e;
             color: white;
             border-radius: 6px;
-            font-size: 0.8rem;
+            font-size: 0.75rem;
             margin-right: 8px;
             vertical-align: middle;
         }
 
-        .list {
-            flex: 1;
-            overflow-y: auto;
-            min-height: 0;
-        }
-
         .item {
-            margin-bottom: 1.2vh;
-            padding: 1vh 1vw;
+            margin-bottom: 1vh;
+            padding: 0.8vh 0.9vw;
             background: #f0fdf4;
-            border-radius: 10px;
+            border-radius: 9px;
             border-left: 3px solid #4ade80;
+            white-space: nowrap;
         }
 
         .item:last-child {
@@ -111,24 +109,24 @@
         }
 
         .item-name {
-            font-size: clamp(0.85rem, 1.6vh, 1rem);
+            font-size: clamp(0.8rem, 1.5vh, 0.95rem);
             font-weight: 600;
             color: #15803d;
-            margin-bottom: 0.2vh;
+            margin-bottom: 0.15vh;
         }
 
         .item-desc {
-            font-size: clamp(0.75rem, 1.4vh, 0.9rem);
+            font-size: clamp(0.7rem, 1.3vh, 0.85rem);
             color: #374151;
-            line-height: 1.4;
+            line-height: 1.35;
         }
 
         .tag {
             display: inline-block;
-            font-size: clamp(0.65rem, 1.1vh, 0.75rem);
-            padding: 1px 7px;
-            border-radius: 10px;
-            margin-left: 6px;
+            font-size: clamp(0.6rem, 1vh, 0.7rem);
+            padding: 1px 6px;
+            border-radius: 9px;
+            margin-left: 5px;
             font-weight: 500;
             vertical-align: middle;
         }
@@ -139,71 +137,73 @@
         .tag-purple { background: #8b5cf6; color: white; }
 
         .dns-bar {
-            flex-shrink: 0;
-            margin-top: 1.5vh;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1.5vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2vw;
+            width: 100%;
         }
 
         .dns-card {
             background: rgba(255, 255, 255, 0.92);
-            border-radius: 14px;
-            padding: 1.5vh 1.5vw;
-            box-shadow: 0 2px 14px rgba(22, 163, 74, 0.08);
-            border: 1px solid rgba(34, 197, 94, 0.14);
+            border-radius: 12px;
+            padding: 1.3vh 1.4vw;
+            box-shadow: 0 2px 12px rgba(22, 163, 74, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.12);
+            text-align: center;
+            flex: 0 1 auto;
+            min-width: 220px;
         }
 
         .dns-label {
-            font-size: clamp(0.75rem, 1.4vh, 0.9rem);
+            font-size: clamp(0.7rem, 1.3vh, 0.85rem);
             color: #166534;
-            margin-bottom: 0.6vh;
+            margin-bottom: 0.4vh;
             font-weight: 500;
         }
 
         .dns-value {
             font-family: "SF Mono", Monaco, "Cascadia Code", Consolas, monospace;
-            font-size: clamp(1.1rem, 2.2vh, 1.5rem);
+            font-size: clamp(1rem, 2vh, 1.3rem);
             color: #15803d;
             font-weight: 600;
             letter-spacing: 0.5px;
         }
 
         .dns-tip {
-            font-size: clamp(0.75rem, 1.4vh, 0.9rem);
+            font-size: clamp(0.7rem, 1.3vh, 0.85rem);
             color: #374151;
-            line-height: 1.5;
+            line-height: 1.4;
         }
 
         footer {
             text-align: center;
-            padding-top: 1vh;
-            flex-shrink: 0;
-            font-size: clamp(0.65rem, 1.2vh, 0.8rem);
+            font-size: clamp(0.6rem, 1.1vh, 0.75rem);
             color: #166534;
             opacity: 0.7;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 800px) {
             html, body {
                 height: auto;
                 overflow: auto;
             }
-            .wrapper {
-                height: auto;
-                min-height: 100vh;
+            body {
+                padding: 2vh 3vw;
             }
             .main {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
             .dns-bar {
-                grid-template-columns: 1fr;
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="container">
         <header>
             <h1>JDY 环境说明</h1>
             <p>内外网环境划分与 DNS 切换指南</p>
@@ -212,49 +212,45 @@
         <div class="main">
             <div class="panel">
                 <div class="panel-title"><span>内</span>内网环境</div>
-                <div class="list">
-                    <div class="item">
-                        <div class="item-name">dev</div>
-                        <div class="item-desc">开发自测环境</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-name">feature_jdy</div>
-                        <div class="item-desc">测试验证的测试环境，对应星辰之前的 dev5</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-name">release_jdy</div>
-                        <div class="item-desc">敏态灰度对应的模拟环境</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-name">master</div>
-                        <div class="item-desc">稳态灰度对应的模拟环境</div>
-                    </div>
+                <div class="item">
+                    <div class="item-name">dev</div>
+                    <div class="item-desc">开发自测环境</div>
+                </div>
+                <div class="item">
+                    <div class="item-name">feature_jdy</div>
+                    <div class="item-desc">测试验证的测试环境，对应星辰之前的 dev5</div>
+                </div>
+                <div class="item">
+                    <div class="item-name">release_jdy</div>
+                    <div class="item-desc">敏态灰度对应的模拟环境</div>
+                </div>
+                <div class="item">
+                    <div class="item-name">master</div>
+                    <div class="item-desc">稳态灰度对应的模拟环境</div>
                 </div>
             </div>
 
             <div class="panel">
                 <div class="panel-title"><span>外</span>外网环境</div>
-                <div class="list">
-                    <div class="item">
-                        <div class="item-name">betapre<span class="tag tag-green">杭州</span></div>
-                        <div class="item-desc">敏态灰度预发布环境，无真实客户</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-name">pre<span class="tag tag-blue">杭州</span></div>
-                        <div class="item-desc">稳态灰度预发布环境，无真实客户</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-name">F0<span class="tag tag-orange">北京 · 杭州 · 广东</span></div>
-                        <div class="item-desc">对应星辰的敏态环境</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-name">G0<span class="tag tag-purple">北京 · 杭州 · 广东</span></div>
-                        <div class="item-desc">对应星辰的稳态环境</div>
-                    </div>
-                    <div class="item">
-                        <div class="item-name">正式环境</div>
-                        <div class="item-desc">杭州 G1-G5、北京 G1、广东 G1</div>
-                    </div>
+                <div class="item">
+                    <div class="item-name">betapre<span class="tag tag-green">杭州</span></div>
+                    <div class="item-desc">敏态灰度预发布环境，无真实客户</div>
+                </div>
+                <div class="item">
+                    <div class="item-name">pre<span class="tag tag-blue">杭州</span></div>
+                    <div class="item-desc">稳态灰度预发布环境，无真实客户</div>
+                </div>
+                <div class="item">
+                    <div class="item-name">F0<span class="tag tag-orange">北京 · 杭州 · 广东</span></div>
+                    <div class="item-desc">对应星辰的敏态环境</div>
+                </div>
+                <div class="item">
+                    <div class="item-name">G0<span class="tag tag-purple">北京 · 杭州 · 广东</span></div>
+                    <div class="item-desc">对应星辰的稳态环境</div>
+                </div>
+                <div class="item">
+                    <div class="item-name">正式环境</div>
+                    <div class="item-desc">杭州 G1-G5、北京 G1、广东 G1</div>
                 </div>
             </div>
         </div>
@@ -270,9 +266,7 @@
             </div>
         </div>
 
-        <footer>
-            所有文本内容均可选中复制
-        </footer>
+        <footer>所有文本内容均可选中复制</footer>
     </div>
 </body>
 </html>
